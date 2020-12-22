@@ -4,3 +4,4 @@ psutil
 hachoir
 tgcrypto
 pyrogram
+git+git://github.com/mahesh0253/pyrogram@asyncio#pyrogram
