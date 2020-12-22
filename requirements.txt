@@ -2,6 +2,6 @@ aiohttp
 Pillow
 psutil
 hachoir
+git+git://github.com/mahesh0253/pyrogram@asyncio#pyrogram
 tgcrypto
 pyrogram
-git+git://github.com/mahesh0253/pyrogram@asyncio#pyrogram
