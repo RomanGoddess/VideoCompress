@@ -29,10 +29,10 @@ async def help_message_f(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/FlixBots')
+                    InlineKeyboardButton('Updates Channel 📢', url='https://t.me/FlixBots')
                 ],
                 [
-                    InlineKeyboardButton('Support Group', url='https://t.me/MirrorZone')
+                    InlineKeyboardButton('Support Group 🗣', url='https://t.me/MirrorZone')
                 ]
             ]
         ),
