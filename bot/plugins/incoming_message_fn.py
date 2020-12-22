@@ -58,10 +58,10 @@ async def incoming_start_message_f(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/Discovery_Updates')
+                    InlineKeyboardButton('Updates Channel 📢', url='https://t.me/FlixBots')
                 ],
                 [
-                    InlineKeyboardButton('Support Group', url='https://t.me/linux_repo')
+                    InlineKeyboardButton('Support Group 🗣', url='https://t.me/MirrorZone')
                 ]
             ]
         ),
