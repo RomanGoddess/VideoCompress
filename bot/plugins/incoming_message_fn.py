@@ -118,7 +118,7 @@ async def incoming_compress_message_f(bot, update):
     )
     chat_id = LOG_CHANNEL
     now = datetime.datetime.now()
-    await bot.send_message(chat_id, f"**Bot Become Busy Now !!** \n\nA Process Started at `{now}`", parse_mode="markdown")
+    await bot.send_message(chat_id, f"**Bot Is Currently Busy Now!! ⚠** \n\n**A Process Started At** `{now}`", parse_mode="markdown")
     try:
       d_start = time.time()
       status = DOWNLOAD_LOCATION + "/status.json"
@@ -148,7 +148,7 @@ async def incoming_compress_message_f(bot, update):
           )
           chat_id = LOG_CHANNEL
           now = datetime.datetime.now()
-          await bot.send_message(chat_id, f"**Download Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+          await bot.send_message(chat_id, f"**Download Stopped, Bot is Free Now!!** \n\n**Process Done At** `{now}`", parse_mode="markdown")
         except:
           pass
         delete_downloads()
