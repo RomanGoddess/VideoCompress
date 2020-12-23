@@ -148,7 +148,7 @@ async def incoming_compress_message_f(bot, update):
           )
           chat_id = LOG_CHANNEL
           now = datetime.datetime.now()
-          await bot.send_message(chat_id, f"**Download Stopped, Bot is Free Now!! ✅** \n\n**Process Done At** `{now}`", parse_mode="markdown")
+          await bot.send_message(chat_id, f"**Download Stopped, Bot is Free Now!! ✅** \n\n**Process Stopped At** `{now}`", parse_mode="markdown")
         except:
           pass
         delete_downloads()
@@ -189,7 +189,7 @@ async def incoming_compress_message_f(bot, update):
         )
         chat_id = LOG_CHANNEL
         now = datetime.datetime.now()
-        await bot.send_message(chat_id, f"**Download Failed, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+        await bot.send_message(chat_id, f"**Download Failed ❌, Bot is Free Now!!** \n\n**Process Stopped At** `{now}`", parse_mode="markdown")
       except:
           pass          
       delete_downloads()
@@ -245,7 +245,7 @@ async def incoming_compress_message_f(bot, update):
           )
           chat_id = LOG_CHANNEL
           now = datetime.datetime.now()
-          await bot.send_message(chat_id, f"**Upload Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+          await bot.send_message(chat_id, f"**Upload Stopped, Bot Is Free Now!! ✅** \n\n**Process Stopped At** `{now}`", parse_mode="markdown")
         except:
           pass
         delete_downloads()
@@ -255,7 +255,7 @@ async def incoming_compress_message_f(bot, update):
       delete_downloads()
       chat_id = LOG_CHANNEL
       now = datetime.datetime.now()
-      await bot.send_message(chat_id, f"**Upload Done, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+      await bot.send_message(chat_id, f"**Uploaded Successfully, Bot Is Free Now!! ✅** \n\n**Process Done At** `{now}`", parse_mode="markdown")
       LOGGER.info(upload.caption);
       try:
         await upload.edit_caption(
