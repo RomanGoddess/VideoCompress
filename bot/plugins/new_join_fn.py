@@ -33,6 +33,10 @@ async def help_message_f(client, message):
                 ],
                 [
                     InlineKeyboardButton('Support Group 🗣', url='https://t.me/MirrorZone')
+                ],
+                [
+                    InlineKeyboardButton('Bot Developer 🙎', url='https://t.me/Iggie'),
+                    InlineKeyboardButton('Source Code 😍', url='https://t.me/NOSOURCECODE')
                 ]
             ]
         ),
