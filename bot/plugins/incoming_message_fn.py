@@ -289,7 +289,7 @@ async def incoming_compress_message_f(bot, update):
     
 async def incoming_cancel_message_f(bot, update):
   """/cancel command"""
-  if update.from_user.id not in AUTH_USERS:
+  if update.from_user.id in AUTH_USERS:
     try:
       await update.message.delete()
       chat_id = LOG_CHANNEL
