@@ -4,7 +4,11 @@
 
 
 from bot.localisation import Localisation
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from bot import (
+    UPDATES_CHANNEL
+)
+from pyrogram.types import ChatPermissions, InlineKeyboardMarkup, InlineKeyboardButton, Message
+from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
 
 async def new_join_f(client, message):
     # delete all other messages, except for AUTH_USERS
@@ -23,20 +27,43 @@ async def new_join_f(client, message):
 
 
 async def help_message_f(client, message):
-    # display the /help message
+    ## Force Sub ##
+    update_channel = UPDATES_CHANNEL
+    if update_channel:
+        try:
+            user = await client.get_chat_member(update_channel, message.chat.id)
+            if user.status == "kicked":
+               await message.reply_text("Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/linux_repo).", parse_mode="markdown")
+               return
+        except UserNotParticipant:
+            await message.reply_text(
+                text="**Please Join My Updates Channel to use this Bot!**",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{update_channel}")
+                        ]
+                    ]
+                )
+            )
+            return
+        except Exception:
+            await message.reply_text("Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).", parse_mode="markdown")
+            return
+    ## Force Sub ##
     await message.reply_text(
         Localisation.HELP_MESSAGE,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('📢 Updates Channel 📢', url='https://t.me/FlixBots')
+                    InlineKeyboardButton('Updates Channel', url='https://t.me/Discovery_Updates')
                 ],
                 [
-                    InlineKeyboardButton('🗣 Support Group 🗣', url='https://t.me/MirrorZone')
+                    InlineKeyboardButton('Support Group', url='https://t.me/linux_repo')
                 ],
                 [
-                    InlineKeyboardButton('Bot Developer 🙎', url='https://t.me/Iggie'),
-                    InlineKeyboardButton('Source Code 😍', url='https://t.me/NOSOURCECODE')
+                    InlineKeyboardButton('Developer', url='https://t.me/AbirHasan2005'), # Bloody Thief, Don't Become a Developer by Stealing other's Codes & Hard Works!
+                    InlineKeyboardButton('Source Code', url='https://github.com/AbirHasan2005/VideoCompress') # Must Give us Credits!
                 ]
             ]
         ),
