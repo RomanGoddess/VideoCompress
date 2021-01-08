@@ -20,6 +20,7 @@ Bot can send his Live Status on Your Logs Channel! Just put your Channel ID in `
 * `APP_ID` - Get this from my.telegram.org
 * `API_HASH` - Get this from my.telegram.org
 * `AUTH_USERS` - Put your ID & other Sudo Users IDs. Separate with **Space**. Just for using ***Admin Commands***.
+* `UPDATES_CHANNEL` - Put your Channel Username or Channel ID which you want to do Force Sub. But bot should be Admin in that channel. If got any error or not understand anything than ask in [Support Group](https://t.me/linux_repo).
 
 ## Follow on:
 <p align="left">
