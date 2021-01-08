@@ -84,7 +84,7 @@ async def incoming_start_message_f(bot, update):
 async def incoming_compress_message_f(bot, update):
   """/compress command"""
   update_channel = UPDATES_CHANNEL
-    if update_channel:
+  if update_channel:
       try:
           user = await client.get_chat_member(update_channel, message.chat.id)
           if user.status == "kicked":
